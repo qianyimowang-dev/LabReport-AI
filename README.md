@@ -1,47 +1,58 @@
 # LabReport AI (智能实验报告助手) 🧪✍️
 
 An AI-powered academic assistant designed for computer science students to generate structured, professional network experiment reports automatically based on raw simulation data (latency, throughput, packet loss).
+一款基于 AI 的学术辅助工具，专为计算机专业学生设计，能够根据网络仿真裸数据（延迟、吞吐量、丢包率）自动生成结构化、规范化的实验报告。
 
 ---
 
 ## 🌟 项目简介 (Introduction)
 
+### 中文
 **LabReport AI** 是一款面向计算机与通信专业学生的智能实验报告生成与管理平台。
-在传统的计算机网络实验中，学生通常需要花费大量时间将测试工具（如 Ping, iPerf, Wireshark）输出的裸数据转换成合规的实验报告。本系统通过 **AI (Gemini / OpenAI / DeepSeek)** 分析输入的**丢包率、延迟、吞吐量**等关键指标，结合经典网络理论（如 TCP 拥塞控制、Mathis 公式等），一键生成规范的**实验现象描述、结果定量/定性分析与实验结论**。
-
+在计算机网络实验中，学生通常需要花费大量时间将测试工具（如 Ping, iPerf, Wireshark）输出的裸数据转换成合规的实验报告。本系统通过 **AI (Gemini / OpenAI / DeepSeek)** 分析输入的**丢包率、延迟、吞吐量**等关键指标，结合经典网络理论（如 TCP 拥塞控制、Mathis 公式等），一键生成规范的**实验现象描述、结果定量/定性分析与实验结论**。
 为了确保演示和使用零门槛，系统支持 **云端数据库模式 (Supabase)** 与 **免配置本地模式 (LocalStorage Fallback)** 智能切换。
 
----
-
-## ✨ 核心功能 (Key Features)
-
-- 🔐 **双模式身份认证**：支持基于 Supabase Auth 的云端注册登录；若未配置云端，则自动降级到**本地离线模式**，数据安全存储于浏览器本地。
-- 📊 **实验数据录入**：支持实验名称、丢包率 (Packet Loss)、时延 (Latency)、吞吐量 (Throughput) 及实验环境描述的快速表单录入。
-- 🤖 **多 AI 模型引擎驱动**：
-  - 优先调用 **Gemini 1.5 Flash API**，返回高精度结构化 JSON 报告。
-  - 支持 **OpenAI (GPT-4o-mini)** 与 **DeepSeek API** 备用接入。
-  - **无 Key 免配置体验**：若未填入任何 API Key，系统将自动使用内置的**本地启发式网络报告生成算法**，确保随时可用！
-- 📝 **结构化报告自动生成**：
-  - **实验现象 (Observation)**：包括报文状态、时延监测等。
-  - **结果分析 (Analysis)**：深入结合 TCP 滑动窗口、拥塞避免机制及 RTT 时延带宽积进行专业学术分析。
-  - **实验结论 (Conclusion)**：提供客观性能评估及系统优化建议（如 BBR 算法、滑动窗口调整等）。
-- 📂 **历史记录管理**：支持对所有已生成报告的模糊搜索、在线编辑、重新生成与删除。
-- 📥 **Markdown 导出**：一键将生成的报告导出为标准的 `.md` 文件，方便导入 Word 或学术排版工具。
-- 🌗 **现代化极简 academic 视觉系统**：
-  - 完美适配移动端、折叠屏及 PC 端的响应式布局。
-  - 支持流畅的**暗黑模式 (Dark Mode)** 与亮色模式切换。
-  - 优雅的玻璃拟态 (Glassmorphic) UI 与微交互动画。
+### English
+**LabReport AI** is an intelligent laboratory report generation and management platform tailored for computer science and telecommunication students.
+In typical computer network experiments, students spend hours formatting raw output from testing tools (e.g., Ping, iPerf, Wireshark) into compliant lab reports. This system utilizes **AI (Gemini / OpenAI / DeepSeek)** to analyze key input metrics like **packet loss, latency, and throughput**. By integrating classical network theories (such as TCP congestion control mechanisms and Mathis formula), it generates professional **experiment observations, quantitative/qualitative analysis, and logical conclusions** with one click.
+To ensure a zero-setup demo experience, the system supports smart toggling between **Cloud Database Mode (Supabase)** and **Zero-config Local Mode (LocalStorage Fallback)**.
 
 ---
 
-## 🛠️ 技术栈 (Tech Stack)
+## ✨ 主要功能 (Key Features)
 
-- **Frontend**: Next.js (App Router), React 19, TypeScript
-- **Styling**: Tailwind CSS v4 (with modern custom CSS tokens & animation)
-- **Icons**: Lucide React
-- **Database & Auth**: Supabase (PostgreSQL)
-- **AI Integration**: Gemini API, OpenAI API, DeepSeek API (OpenAI Compatible)
-- **Deployment**: Vercel
+- 🔐 **双模式身份认证 / Dual-Mode Authentication**
+  - **CN**: 支持基于 Supabase Auth 的云端账户系统；若未配置云端，则自动无缝降级到本地缓存模式。
+  - **EN**: Supports cloud authentication powered by Supabase Auth; seamlessly falls back to Local Mode if cloud config is not provided.
+- 📊 **实验数据输入与预设模板 / Parametric Inputs & Templates**
+  - **CN**: 录入实验名称、丢包率、延迟、吞吐量及描述。内置 TCP 拥塞控制、Wi-Fi 衰减、光纤长肥管道 (LFN) 三大学术预设模板。
+  - **EN**: Input fields for experiment title, packet loss, latency, throughput, and description. Features three academic presets (TCP Congestion, Wi-Fi Signal Loss, and Optical LFN).
+- 🤖 **多 AI 模型驱动引擎 / Multi-Model AI Engine**
+  - **CN**: 优先通过 Gemini 1.5 Flash 接口生成精准报告，支持 OpenAI (GPT-4o-mini) 和 DeepSeek API。若未配置任何 API Key，将自动启用本地启发式算法模板生成器。
+  - **EN**: Prioritizes Gemini 1.5 Flash API for high-quality reports, with fallback to OpenAI and DeepSeek APIs. Includes a local heuristic template generator if no API keys are configured.
+- 📝 **学术级报告生成 / Academic Report Generation**
+  - **CN**: 自动输出结构化的“实验现象”、“结果分析”及“实验结论”，深度融合网络协议栈底层机制分析。
+  - **EN**: Automatically generates structured "Observation", "Analysis", and "Conclusion" sections, diving deep into protocol-level networking mechanisms.
+- 📂 **历史记录与 Markdown 导出 / History & Markdown Export**
+  - **CN**: 提供历史报告的模糊搜索、在线编辑、重新生成与删除。支持一键导出标准的 `.md` 学术排版文件。
+  - **EN**: Allows fuzzy searching, online editing, regeneration, and deletion of historical reports. Supports exporting to standard `.md` markdown files with one click.
+- 🌗 **响应式与多主题 / Responsive & Theme Switching**
+  - **CN**: 自适应移动端及平板，支持随系统或手动切换暗黑模式 (Dark Mode)。
+  - **EN**: Fully responsive across mobile/tablet views, supporting manual or system dark mode toggling.
+
+---
+
+## 🛠️ 技术栈 (Technology Stack)
+
+| 领域 / Field | 技术 / Technology | 说明 / Note |
+| :--- | :--- | :--- |
+| **Core Framework** | Next.js 16 (App Router), React 19 | 现代化服务端渲染与高性能路由 / Modern App router |
+| **Language** | TypeScript | 类型安全保障 / Type-safety |
+| **Styling** | Tailwind CSS v4 | 玻璃拟态与流畅微动画 / Glassmorphism & micro-animations |
+| **Icons** | Lucide React | 丰富现代图标 / Aesthetic icon library |
+| **Database / Auth** | Supabase (PostgreSQL) | 云端存储与 OAuth 认证 / Cloud database and user session |
+| **Fallback** | Browser LocalStorage | 离线免配置模式 / Off-line zero-configuration storage |
+| **AI Engine** | Gemini 1.5 / OpenAI / DeepSeek | 结构化 JSON 提示词工程 / Structured JSON Prompt engineering |
 
 ---
 
