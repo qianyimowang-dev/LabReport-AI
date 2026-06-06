@@ -319,9 +319,9 @@ export default function AuthPage() {
         {/* Footer/Info info */}
         {isLocalMode && (
           <div className="flex items-center space-x-2 bg-blue-500/5 border border-blue-500/10 rounded-2xl p-4 text-xs text-blue-500">
-            <Info className="h-4.5 w-4.5 shrink-0" />
+            <Info className="h-4.5 w-4.5 shrink-0 animate-pulse" />
             <p>
-              <strong>本地开发模式:</strong> 自动将所有用户和实验报告数据保存在浏览器的本地缓存（localStorage）中，<strong>无需配置 Supabase 后端</strong> 即可即开即用！
+              <strong>本地极速模式:</strong> 所有数据与实验报告将安全保存在您当前浏览器的本地缓存（localStorage）中，<strong>免去 Supabase 后端配置</strong>，即可直接体验完整功能！
             </p>
           </div>
         )}
