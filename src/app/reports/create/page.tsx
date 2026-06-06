@@ -35,11 +35,11 @@ export default function CreateReportPage() {
   // Loading sub-messages rotation for rich user experience
   const loadingSteps = [
     'AI 正在读取网络测量参数...',
-    'AI 正在根据丢包率与时延计算理论吞吐量上限...',
-    'AI 正在根据 Mathis 吞吐量公式构建数学分析模型...',
-    'AI 正在撰写实验现象 (Observation) 章节...',
-    'AI 正在撰写结果分析 (Analysis) 章节，分析拥塞窗口退避行为...',
-    'AI 正在撰写实验结论 (Conclusion) 并配置网络调优建议...'
+    'AI 正在根据丢包率与时延计算理论吞吐量上限 (Mathis 拥塞控制模型)...',
+    'AI 正在根据经典时延带宽积 (BDP) 分析滑动窗口容量...',
+    'AI 正在撰写实验现象 (Observation) 章节，分析 TCP Duplicate ACK 状态...',
+    'AI 正在撰写结果分析 (Analysis) 章节，解剖拥塞窗口退避行为与吞吐衰退量化分析...',
+    'AI 正在生成最终结论并配置针对性的长肥管道 (LFN) 调优建议...'
   ];
 
   useEffect(() => {
