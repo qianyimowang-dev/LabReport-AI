@@ -19,6 +19,25 @@ To ensure a zero-setup demo experience, the system supports smart toggling betwe
 
 ---
 
+## 📸 界面预览 (Screenshots)
+
+### 1. 登录页面 (Login Page)
+![Login Page](./public/screenshots/login.png)
+
+### 2. 仪表盘 / 控制台 (Dashboard)
+![Dashboard](./public/screenshots/dashboard.png)
+
+### 3. 创建实验报告 (Create Report)
+![Create Report](./public/screenshots/create_report.png)
+
+### 4. AI 报告生成详情 - 实验现象 (Report Details - Observations)
+![Report Details 1](./public/screenshots/report_detail_1.png)
+
+### 5. AI 报告生成详情 - 结果分析与结论 (Report Details - Analysis & Conclusion)
+![Report Details 2](./public/screenshots/report_detail_2.png)
+
+---
+
 ## ✨ 主要功能 (Key Features)
 
 - 🔐 **双模式身份认证 / Dual-Mode Authentication**
