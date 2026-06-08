@@ -101,7 +101,8 @@ powershell -ExecutionPolicy Bypass -Command "npm run dev"
 # 或者直接运行
 npm run dev
 ```
-打开浏览器访问 [http://localhost:3000](http://localhost:3000) 即可开始使用。
+打开浏览器访问 [http://localhost:3000](http:/ocal/lhost:3000) 即可开始使用。
+测试网址  https://lab-report-ai-two.vercel.app/
 
 ---
 
